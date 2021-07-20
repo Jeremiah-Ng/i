@@ -35,9 +35,10 @@ function draw() {
         circle(leftWristX, leftWristY, 20);
         number_leftWristY = Number(leftWristY);
         left = floor(number_leftWristY);
-        document.getElementById("speed").innerHTML="Song Playing - Dubwoofer Substep";
+
         if (left > right) {
             song2.pause();
+            document.getElementById("speed").innerHTML="Song Playing - Dubwoofer Substep";
             if(song1.isPlaying()){
             }else{
                 song1.play();
@@ -50,9 +51,9 @@ function draw() {
         circle(rightWristX, rightWristY, 20);
         number_rightWristY = Number(rightWristY);
         right = floor(number_rightWristY);
-        document.getElementById("speed").innerHTML="Song Playing - Bones";
         if (right > left) {
             song1.pause();
+            document.getElementById("speed").innerHTML="Song Playing - Bones";
             if(song2.isPlaying()){
             }else{
                 song2.play();
