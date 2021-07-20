@@ -9,8 +9,8 @@ function same1() {
 function preload() {
     song1 = loadSound("song1.mp3");
     song2 = loadSound("song2.mp3");
-       song1.setVolume(0.7)
-       song2.setVolume(0.7)
+       song1.setVolume(0.5)
+       song2.setVolume(0.5)
 }
 
 function setup() {
@@ -35,13 +35,13 @@ function draw() {
         circle(leftWristX, leftWristY, 20);
         number_leftWristY = Number(leftWristY);
         left = floor(number_leftWristY);
-
-        if (left > right) {
-            song2.pause();
-            document.getElementById("speed").innerHTML="Song Playing - Dubwoofer Substep";
+        if (left < right) {
             if(song1.isPlaying()){
             }else{
+                song2.stop(0);
+                song2.pause();
                 song1.play();
+                document.getElementById("speed").innerHTML="Song Playing - Dubwoofer Substep";
             }
         }
     }
@@ -51,12 +51,13 @@ function draw() {
         circle(rightWristX, rightWristY, 20);
         number_rightWristY = Number(rightWristY);
         right = floor(number_rightWristY);
-        if (right > left) {
-            song1.pause();
-            document.getElementById("speed").innerHTML="Song Playing - Bones";
+        if (right < left) {
             if(song2.isPlaying()){
             }else{
+                song1.stop(0);
+                song1.pause();
                 song2.play();
+                document.getElementById("speed").innerHTML="Song Playing - Bones";
             }
         }
     }
