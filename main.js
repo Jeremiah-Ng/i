@@ -22,7 +22,8 @@ function setup() {
     posenet = ml5.poseNet(video, modelLoaded);
     posenet.on("pose", gotPoses);
 }
-
+remove1="";
+remove2="";
 function draw() {
     image(video, 0, 0, 600, 500);
 
