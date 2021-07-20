@@ -9,7 +9,8 @@ function same1() {
 function preload() {
     song1 = loadSound("song1.mp3");
     song2 = loadSound("song2.mp3");
-    //    song1.rate(0.5)
+       song1.setVolume(0.7)
+       song2.setVolume(0.7)
 }
 
 function setup() {
@@ -49,7 +50,7 @@ function draw() {
         circle(rightWristX, rightWristY, 20);
         number_rightWristY = Number(rightWristY);
         right = floor(number_rightWristY);
-        document.getElementById("speed").innerHTML="Song Playing - Dubwoofer Substep";
+        document.getElementById("speed").innerHTML="Song Playing - Bones";
         if (right > left) {
             song1.pause();
             if(song2.isPlaying()){
