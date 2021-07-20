@@ -29,10 +29,10 @@ function draw() {
     if (leftWristScore > 0.20) {
         fill("red");
         stroke("black");
-        circle(leftWristX, leftWristY, 20);
+        circle(leftWristX, leftWristY, 20);q
         number_leftWristY = Number(leftWristY);
-        remove1 = floor(number_leftWristY);
-        if (remove1 > remove2) {
+        left = floor(number_leftWristY);
+        if (left > right) {
             song2.pause();
             if(song1.isPlaying()){
             }else{
@@ -45,8 +45,8 @@ function draw() {
         stroke("black");
         circle(rightWristX, rightWristY, 20);
         number_rightWristY = Number(rightWristY);
-        remove2 = floor(number_rightWristY);
-        if (remove2 > remove1) {
+        right = floor(number_rightWristY);
+        if (right > left) {
             song1.pause();
             if(song2.isPlaying()){
             }else{
